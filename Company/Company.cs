@@ -19,18 +19,13 @@ namespace Company
         private int INN { set; get; }
         public ExecutiveDirector ExecutiveDirector { set; get; }
         public GeneralDirector GeneralDirector { set; get; }
+
         public ICollection<Client> Clients = new List<Client>();
 
         public TechnicalSupport TechnicalSupport;
 
         private int money = 0;
-
         private ICollection<Order> Orders { get; set; } = new List<Order>();
-
-        public bool Signing(string order)
-        {
-            return true;
-        }
         public bool Processing(Order order)
         {
             ExecutiveDirector.GetOrder(order);
